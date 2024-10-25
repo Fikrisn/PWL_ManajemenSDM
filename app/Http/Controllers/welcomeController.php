@@ -4,15 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class welcomeController extends Controller
+class WelcomeController extends Controller
 {
-    public function index(){
-        $breadcrumb = (object)[
-            'title' => 'Welcome To HRSync',
-            'list'  =>['Home', 'Welcome']
-        ];
-        $activeMenu = 'dasboard';
-
-        return view('welcome', ['breadcrumb' => $breadcrumb, 'activeMenu' => $activeMenu]);
+    public function index()
+    {
+        return view('welcome'); // pastikan ada file welcome.blade.php di resources/views
     }
 }

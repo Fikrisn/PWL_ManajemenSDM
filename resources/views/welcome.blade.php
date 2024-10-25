@@ -1,4 +1,6 @@
-@extends('layouts.template')
+@extends('layouts.admin')
+
+@section('title', 'Dashboard')
 
 @section('content')
 <style>
@@ -32,10 +34,6 @@
         margin: 5px 0;
         color: gray;
     }
-    .card .icon {
-        color: #007bff;
-        margin-top: 10px;
-    }
     .calendar-container {
         margin-top: 20px;
         background-color: white;
@@ -49,11 +47,6 @@
     .schedule h3 {
         font-size: 18px;
         margin: 0;
-    }
-    .schedule .view-all {
-        float: right;
-        color: #007bff;
-        cursor: pointer;
     }
     .schedule-item {
         display: flex;
@@ -72,16 +65,12 @@
         color: #007bff;
         cursor: pointer;
     }
-    .schedule-item .icon {
-        color: red;
-    }
 </style>
 
 <!-- FullCalendar Stylesheet -->
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
 
-<body>
 <div class="container">
     <div class="cards">
         <div class="card">
@@ -111,30 +100,7 @@
                 <div class="view">View</div>
             </div>
         </div>
-        <div class="schedule-item">
-            <div>
-                <div class="title">Meeting</div>
-                <div class="time">9:00 PM</div>
-                <div>This is to Notify you that you will be attending ..</div>
-                <div class="view">View</div>
-            </div>
-        </div>
-        <div class="schedule-item">
-            <div>
-                <div class="title"><i class="fas fa-circle icon"></i> Meeting</div>
-                <div class="time">1:30 PM</div>
-                <div>This is to Notify you that you will be attending ..</div>
-                <div class="view">View</div>
-            </div>
-        </div>
-        <div class="schedule-item">
-            <div>
-                <div class="title"><i class="fas fa-circle icon"></i> Meeting</div>
-                <div class="time">3:30 PM</div>
-                <div>This is to Notify you that you will be attending ..</div>
-                <div class="view">View</div>
-            </div>
-        </div>
+        <!-- Add more schedule items as needed -->
     </div>
 </div>
 
@@ -143,7 +109,7 @@
         var calendarEl = document.getElementById('calendar');
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth', // Menampilkan kalender dalam bentuk grid bulanan
+            initialView: 'dayGridMonth',
             events: [
                 {
                     title: 'Meeting 1',
@@ -155,7 +121,7 @@
                     start: '2023-05-10',
                     description: 'Deskripsi Meeting 2'
                 }
-                // Tambahkan event lainnya di sini
+                // Add more events as needed
             ],
             eventClick: function(info) {
                 alert('Event: ' + info.event.title);
@@ -167,7 +133,4 @@
     });
 </script>
 
-</body>
 @endsection
-
-sdkalkdlaskd
